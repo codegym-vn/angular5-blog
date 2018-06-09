@@ -1,0 +1,8 @@
+.post-feature {
+  max-height: 180px;
+  overflow: hidden;
+}
+
+.post-feature img {
+  width: 100%;
+}

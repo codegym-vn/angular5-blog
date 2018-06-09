@@ -1,0 +1,8 @@
+.post-single-feature {
+  overflow: hidden;
+  height: 300px;
+}
+
+.post-single-feature img {
+  width: 100%;
+}

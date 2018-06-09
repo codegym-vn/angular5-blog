@@ -1,0 +1,9 @@
+<div class="row">
+  <div *ngFor="let post of posts" class="posts" class="post col-sm-4">
+    <div class="post-feature">
+      <a routerLink="/posts/{{post.id}}"><img [src]="post.feature? post.feature : '/assets/images/default-post.jpeg'"/></a>
+    </div>
+    <a routerLink="/posts/{{post.id}}"><h4 class="post-title">{{post.title}}</h4></a>
+    <p class="post-teaser">{{post.teaser}}</p>
+  </div>
+</div>
