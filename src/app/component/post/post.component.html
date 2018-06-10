@@ -1,8 +1,8 @@
 <div *ngIf="post">
   <div class="post-single-feature">
-    <img [src]="post.feature? post.feature : '/assets/images/default-post.jpeg'"/>
+    <img [src]="post.feature? baseBackendUrl + post.feature : '/assets/images/default-post.jpeg'"/>
   </div>
   <h3 class="post-single-title">{{post.title}}</h3>
-  <p class="post-single-teaser">{{post.teaser}}</p>
-  <p class="post-single-content">{{post.content}}</p>
+  <div class="post-single-teaser">{{post.teaser}}</div>
+  <div class="post-single-content" [innerHTML]="post.content"></div>
 </div>

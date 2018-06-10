@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PostService} from '../../service/post.service';
 import {Post} from '../../model/post';
+import {BaseService} from '../../service/base.service';
 
 @Component({
   selector: 'app-post',
@@ -11,11 +12,14 @@ import {Post} from '../../model/post';
 export class PostComponent implements OnInit {
 
   private post: Post;
+  private baseBackendUrl: string;
 
   constructor(
     private route: ActivatedRoute,
     private postService: PostService
-  ) { }
+  ) {
+    this.baseBackendUrl = BaseService.BASE_BACK_END_URL + '/features/';
+  }
 
   ngOnInit() {
     this.getPost();

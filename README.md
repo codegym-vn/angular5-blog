@@ -1,6 +1,6 @@
 # AngularBlog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+A simple Blog System based on Angular 5. [CodeGym](https://codegym.vn)
 
 ## Development server
 

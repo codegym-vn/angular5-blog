@@ -24,6 +24,6 @@ export class CategoryComponent implements OnInit {
   private getCategory() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.categoryService.getPosts(id)
-      .subscribe(posts => this.posts = posts.posts); // TODO: Change to posts only
+      .subscribe(postPage => this.posts = postPage.content);
   }
 }

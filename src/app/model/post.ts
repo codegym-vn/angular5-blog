@@ -3,4 +3,7 @@ export class Post {
   title: String;
   teaser: String;
   content: String;
+  created: Date;
+  feature: String;
+  likes: number;
 }

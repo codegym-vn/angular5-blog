@@ -4,11 +4,12 @@ import {Observable} from 'rxjs/Observable';
 import {Post} from '../model/post';
 import {BaseService} from './base.service';
 import {catchError} from 'rxjs/operators';
+import {PostPage} from '../model/PostPage';
 
 @Injectable()
 export class PostService extends BaseService {
 
-  private postsUrl = 'api/posts';
+  private postsUrl = BaseService.BASE_BACK_END_URL + '/api/posts';
 
   constructor(
     private http: HttpClient
@@ -16,10 +17,10 @@ export class PostService extends BaseService {
     super();
   }
 
-  public getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.postsUrl)
+  public getPosts(): Observable<PostPage> {
+    return this.http.get<PostPage>(this.postsUrl)
       .pipe(
-        catchError(this.handleError('getPosts', []))
+        catchError(this.handleError('getPosts', null))
       );
   }
 

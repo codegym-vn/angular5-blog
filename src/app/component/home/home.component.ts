@@ -21,6 +21,6 @@ export class HomeComponent implements OnInit {
 
   private loadPosts() {
     this.postService.getPosts()
-      .subscribe(posts => this.posts = posts);
+      .subscribe(postPage => this.posts = postPage.content);
   }
 }

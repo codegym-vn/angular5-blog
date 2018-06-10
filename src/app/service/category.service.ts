@@ -4,12 +4,12 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {catchError, tap} from 'rxjs/operators';
 import {BaseService} from './base.service';
-import {Post} from '../model/post';
+import {PostPage} from '../model/PostPage';
 
 @Injectable()
 export class CategoryService extends BaseService {
 
-  private categoriesUrl = 'api/categories';
+  private categoriesUrl = BaseService.BASE_BACK_END_URL + '/api/categories';
 
   constructor(
     private http: HttpClient
@@ -24,10 +24,10 @@ export class CategoryService extends BaseService {
       );
   }
 
-  public getPosts(id: number): Observable<Post[]> {
-    return this.http.get<Post[]>(this.categoriesUrl + '/' + id + '/posts')
+  public getPosts(id: number): Observable<PostPage> {
+    return this.http.get<PostPage>(this.categoriesUrl + '/' + id + '/posts')
       .pipe(
-        catchError(this.handleError('getPosts', []))
+        catchError(this.handleError('getPosts', null))
       );
   }
 }

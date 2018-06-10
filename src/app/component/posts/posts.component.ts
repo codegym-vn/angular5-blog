@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Post} from "../../model/post";
+import {Post} from '../../model/post';
+import {BaseService} from '../../service/base.service';
 
 @Component({
   selector: 'app-posts',
@@ -11,7 +12,11 @@ export class PostsComponent implements OnInit {
   @Input()
   posts: Post[];
 
-  constructor() { }
+  private baseBackendUrl: string;
+
+  constructor() {
+    this.baseBackendUrl = BaseService.BASE_BACK_END_URL + '/features/';
+  }
 
   ngOnInit() {
   }
