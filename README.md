@@ -1,4 +1,5 @@
 # AngularBlog
+Mã nguồn AngularBlog được sử dụng để thực hành tại [CodeGym](https://codegym.vn)
 
 A simple Blog System based on Angular 5. [CodeGym](https://codegym.vn)
 
